@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+	<!-- this file is for beans -->
+	<bean id="std1" class="com.dhathika.pojo.Student">
+		<property name="sid" value="1010"></property>
+		<property name="name" value="vishnupriya"></property>
+		<property name="marks" value="90"></property>
+		<property name="address" ref="address1"></property>
+	</bean>
+	<bean id="std2" class="com.dhathika.pojo.Student">
+		<property name="sid" value="1011"></property>
+		<property name="name" value="renuka"></property>
+		<property name="marks" value="90"></property>
+	</bean>
+	<bean id="std3" class="com.dhathika.pojo.Student">
+		<property name="sid" value="1012"></property>
+		<property name="name" value="benarji"></property>
+		<property name="marks" value="93"></property>
+	</bean>
+	<bean id="std4" class="com.dhathika.pojo.Student">
+		<property name="sid" value="1013"></property>
+		<property name="name" value="sohel"></property>
+		<property name="marks" value="95"></property>
+	</bean>
+	<bean id="address1" class="com.dhathika.pojo.Address">
+	<property name="dno" value="1"></property>
+	<property name="street" value="bhagath street"></property>
+	<property name="city" value="Tirupati"></property>
+	<property name="state" value="AP"></property>
+	<property name="pin" value="517502"></property>
+	</bean>
+
+</beans>
