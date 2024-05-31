@@ -23,7 +23,7 @@ public class Main {
 		
 		ApplicationContext  context = new ClassPathXmlApplicationContext("spring.xml");
       
-        Student std = (Student) context.getBean("std1");
+        Student std = (Student) context.getBean("student");
         System.out.println(std);
       
 
