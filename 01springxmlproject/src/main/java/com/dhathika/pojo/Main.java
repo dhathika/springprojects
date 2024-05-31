@@ -8,22 +8,14 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class Main {
 
 	public static void main(String[] args) throws IOException {
-		// creating a student object in core java simplest way
-//	Student std = new Student();
-//	System.out.println(std.hashCode()); // 1712
-//	        std = new Student();
-//	        System.out.println(std.hashCode());     // 
-//	      std = new Student();
-//	      System.out.println(std.hashCode());
-// prototype design pattern 
-// for each request a new object. 
+		
 		
 
 		
 		
 		ApplicationContext  context = new ClassPathXmlApplicationContext("spring.xml");
       
-        Student std = (Student) context.getBean("std1");
+        Student std = (Student) context.getBean("student");
         System.out.println(std);
       
 

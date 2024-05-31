@@ -1,8 +1,52 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans
-http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd">
 
+   <!-- Address Bean Definition -->
+    <bean id="address" class="com.dhathika.pojo.Address">
+    <property name="dno" value="1"/>
+        <property name="street" value="Kalyan Street"/>
+        <property name="city" value ="HYD" ></property>
+        <property name="state" value ="TS"></property>
+        <property name="pin" value ="333333"></property>
+        <!-- Define properties for Address bean -->
+        <!-- You need to provide setter methods in Address class to inject values -->
+    </bean>
+
+    <!-- Student Bean Definition -->
+    <bean id="student" class="com.dhathika.pojo.Student">
+        <!-- Define properties for Student bean -->
+        <property name="sid" value="1"/>
+        <property name="name" value="John"/>
+        <!-- Inject Address bean -->
+        <property name="address" ref="address"/>
+        <!-- Inject List of Long for mobileContacts -->
+        <property name="mobileContacts">
+            <list>
+                <value>1234567890</value>
+                <value>9876543210</value>
+                <!-- Add more values as needed -->
+            </list>
+        </property>
+        <!-- Inject Set of Strings for subjects -->
+        <property name="subjects">
+            <set>
+                <value>Mathematics</value>
+                <value>Physics</value>
+                <!-- Add more values as needed -->
+            </set>
+        </property>
+        <!-- Inject Map of String, Integer for marks -->
+        <property name="marks">
+            <map>
+                <entry key="Mathematics" value="90"/>
+                <entry key="Physics" value="85"/>
+                <!-- Add more entries as needed -->
+            </map>
+        </property>
+    </bean>
+   
 
 </beans>
+
