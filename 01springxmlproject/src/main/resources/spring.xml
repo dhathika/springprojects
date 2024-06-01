@@ -5,4 +5,41 @@
 http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
 
 
+	<!-- constructor based dependency injection -->
+	<bean id="address1" class="com.dhathika.pojo.Address">
+		<constructor-arg value="565656" index="4" type="long"></constructor-arg>
+		<constructor-arg value="Tirupati" index="2"
+			type="java.lang.String"></constructor-arg>
+		<constructor-arg value="1010" index="0" type="int"></constructor-arg>
+		<constructor-arg value="A.P" index="3"
+			type="java.lang.String"></constructor-arg>
+		<constructor-arg value="AzadStreet" index="1"
+			type="java.lang.String"></constructor-arg>
+	</bean>
+	<bean id="student" class="com.dhathika.pojo.Student">
+		<property name="sid" value="1212"></property>
+		<property name="name" value="mahalakshmi"></property>
+		<property name="address" ref="address1"></property>
+		<property name="mobileContacts">
+			<list>
+				<value>8970373795</value>
+				<value>7411872687</value>
+			</list>
+		</property>
+		<property name="subjects">
+			<set>
+				<value>Mathematics</value>
+				<value>Physics</value>
+				<value>Chemistry</value>
+			</set>
+		</property>
+		<property name="marks">
+			<map>
+				<entry key="mathematics" value="100"></entry>
+				<entry key="physics" value="98"></entry>
+				<entry key="chemistry" value="99"></entry>
+			</map>
+		</property>
+
+	</bean>
 </beans>

@@ -7,6 +7,23 @@ public class Address {
 	private String city;
 	private String state;
 	private long pin;
+	
+	
+	public Address() {
+		
+	}
+
+	public Address(int dno, String street, String city, String state, long pin) {
+	
+		this.dno = dno;
+		this.street = street;
+		this.city = city;
+		this.state = state;
+		this.pin = pin;
+	}
+	
+
+	
 
 	public int getDno() {
 		return dno;
