@@ -5,9 +5,9 @@
                            http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 	<bean id="order" class="com.dhathika.dto.Order">
-		<property name="orderId" value="1012"></property>
+		<property name="orderId" value="19056"></property>
 		<property name="orderName" value="cloths"></property>
-		<property name="orderPrice" value="900.50"></property>
+		<property name="orderPrice" value="15000"></property>
 	</bean>
 	<bean id="orderService" class="com.dhathika.service.OrderService">
 		<property name="orderDao" ref="orderDao"></property>
@@ -17,10 +17,10 @@
 	</bean>
 	<bean id="util" class="com.dhathika.util.ConnectionUtil">
 		<property name="driver"
-			value="com.mysql.cj.jdbc.Driver"></property>
+			value="oracle.jdbc.driver.OracleDriver"></property>
 		<property name="url"
-			value="jdbc:mysql://localhost:3306/sys"></property>
-		<property name="userName" value="root"></property>
-		<property name="password" value="rohan"></property>
+			value="jdbc:oracle:thin:@localhost:1521:xe"></property>
+		<property name="userName" value="SYSTEM"></property>
+		<property name="password" value="renuka"></property>
 	</bean>
 </beans>

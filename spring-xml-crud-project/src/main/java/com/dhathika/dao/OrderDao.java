@@ -24,7 +24,7 @@ public class OrderDao {
 	}
 
 	public void saveOrderDao(Order order) {
-		String insertQuery = "insert into order1 values (" + order.getOrderId() + "," + "'" + order.getOrderName() + "'"
+		String insertQuery = "insert into order12 values (" + order.getOrderId() + "," + "'" + order.getOrderName() + "'"
 				+ "," + order.getOrderPrice() + ")";
 		Connection con = null;
 		Statement stmt = null;
@@ -41,7 +41,7 @@ public class OrderDao {
 	}
 
 	public Order selectOrderByOrderIdDao(int orderId) {
-		String selectQuery = "select* from order1 where orderid=" + orderId;
+		String selectQuery = "select* from order12 where orderid=" + orderId;
 		Connection con = null;
 		Statement stmt = null;
 		try {
@@ -64,7 +64,7 @@ public class OrderDao {
 	}
 
 	public List<Order> selectAllOrderDao() {
-		String selectQuery = "select* from order1 ";
+		String selectQuery = "select* from order12 ";
 		List<Order> orderList = new ArrayList<Order>();
 		Connection con = null;
 		Statement stmt = null;
@@ -95,7 +95,7 @@ public class OrderDao {
 		try {
 			con = util.getConnection();
 			stmt = con.createStatement();
-			String deleteQuery = "delete from order1 where orderid=" + orderId;
+			String deleteQuery = "delete from order12 where orderid=" + orderId;
 			stmt.execute(deleteQuery);
 			con.close();
 		} catch (SQLException e) {
@@ -111,7 +111,7 @@ public class OrderDao {
 		try {
 			con = util.getConnection();
 			stmt = con.createStatement();
-			String updateorderQuery = "update order1 set ordername = " + "'" + order.getOrderName() + "',"
+			String updateorderQuery = "update order12 set ordername = " + "'" + order.getOrderName() + "',"
 					+ "orderprice =" + order.getOrderPrice() + " where orderid = " + order.getOrderId();
 			System.out.println(updateorderQuery);
 			stmt.execute(updateorderQuery);

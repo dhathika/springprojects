@@ -22,18 +22,18 @@ public class OrderController {
 		OrderService service = (OrderService) beanFactory.getBean("orderService");
 		service.saveOrder(order);
 		
-//		Order orderById =service.selectOrderByOrderId(1012);
+//		Order orderById =service.selectOrderByOrderId(10067);
 //		System.out.println(orderById);
+	
+		List<Order> orderList=	service.selectAllOrder();
+		for(Order or:orderList)
+		System.out.println(or);
 		
-//		List<Order> orderList=	service.selectAllOrder();
-//		for(Order or:orderList)
-//		System.out.println(or);
+//		service.deleteOrder(19056);
 		
-//		service.deleteOrder(1012);
-		
-//		Order updatedorder = service.selectOrderByOrderId(1011);
-//		updatedorder.setOrderName("laptop");
-//		updatedorder.setOrderPrice(60000);
+//		Order updatedorder = service.selectOrderByOrderId(19056);
+//		updatedorder.setOrderName("Bags");
+//		updatedorder.setOrderPrice(1000);
 //		service.updatOrder(updatedorder);
 	}
 
