@@ -18,7 +18,9 @@ public class OrderController {
 		BeanFactory beanFactory = new XmlBeanFactory(resource);
 		Order order = (Order) beanFactory.getBean("order");
 		OrderService service = (OrderService) beanFactory.getBean("orderService");
+		System.out.println(service);
 		service.saveOrder(order);
+		
 	}
 
 }

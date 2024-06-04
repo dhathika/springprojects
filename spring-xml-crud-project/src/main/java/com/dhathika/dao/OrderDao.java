@@ -12,15 +12,18 @@ public class OrderDao {
 
 	private ConnectionUtil util;
 	
-	
+//	public OrderDao(ConnectionUtil util) {
+//		this.util = util;
+//	}
+
 
 	public ConnectionUtil getUtil() {
 		return util;
 	}
 
-	public void setUtil(ConnectionUtil util) {
-		this.util = util;
-	}
+//	public void setUtil(ConnectionUtil util) {
+//		this.util = util;
+//	}
 
 	public void saveOrderDao(Order order) {
 		String insertQuery = "insert into order1 values (" + order.getOrderId() + "," + "'" + order.getOrderName() + "'"

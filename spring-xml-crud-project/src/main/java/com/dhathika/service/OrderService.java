@@ -9,16 +9,17 @@ public class OrderService {
 	
 	 OrderDao orderDao;
 	 
-	
-
-
-	public OrderDao getOrderDao() {
+//	 public OrderService(OrderDao orderDao) {
+//		 this.orderDao = orderDao;
+//	 }
+	 
+		public OrderDao getOrderDao() {
 		return orderDao;
 	}
 
-	public void setOrderDao(OrderDao orderDao) {
-		this.orderDao = orderDao;
-	}
+//	public void setEmployee(OrderDao orderDao) {
+//		this.orderDao = orderDao;
+//	}
 
 	public void saveOrder(Order order) {
 		orderDao.saveOrderDao(order);

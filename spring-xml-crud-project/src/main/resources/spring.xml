@@ -5,15 +5,13 @@
 http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
 
 	<bean id="order" class="com.dhathika.dto.Order">
-		<property name="orderId" value="1010"></property>
-		<property name="orderName" value="food"></property>
-		<property name="orderPrice" value="340.50"></property>
+		<property name="orderId" value="1019"></property>
+		<property name="orderName" value="ssd"></property>
+		<property name="orderPrice" value="25000.50"></property>
 	</bean>
-	<bean id="orderService" class="com.dhathika.service.OrderService">
-		<property name="orderDao" ref="orderDao"></property>
+	<bean id="orderService" class="com.dhathika.service.OrderService" autowire="autodetect">
 	</bean>
-	<bean id="orderDao" class="com.dhathika.dao.OrderDao">
-		<property name="util" ref="util"></property>
+	<bean id="orderDao" class="com.dhathika.dao.OrderDao" autowire="autodetect">
 	</bean>
 	<bean id="util" class="com.dhathika.util.ConnectionUtil">
 		<property name="driver"
