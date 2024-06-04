@@ -13,13 +13,17 @@ public class OrderService {
 	
 
 
-	public OrderDao getOrderDao() {
-		return orderDao;
-	}
-
-	public void setOrderDao(OrderDao orderDao) {
+	public OrderService(OrderDao orderDao) {
 		this.orderDao = orderDao;
 	}
+
+//	public OrderDao getOrderDao() {
+//		return orderDao;
+//	}
+//
+//	public void setOrderDao(OrderDao orderDao) {
+//		this.orderDao = orderDao;
+//	}
 
 	public void saveOrder(Order order) {
 		orderDao.saveOrderDao(order);

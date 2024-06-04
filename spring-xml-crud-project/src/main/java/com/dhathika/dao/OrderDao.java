@@ -14,6 +14,11 @@ public class OrderDao {
 	Order order = new Order();
 
 	private ConnectionUtil util;
+	
+	
+	public OrderDao(ConnectionUtil util) {
+		this.util = util;
+	}
 
 	public ConnectionUtil getUtil() {
 		return util;
