@@ -23,8 +23,8 @@ public class Main {
 		
 		ApplicationContext  context = new ClassPathXmlApplicationContext("spring.xml");
       
-       Address address = (Address) context.getBean("address");
-        System.out.println(address);
+        Student std = (Student) context.getBean("student");
+        System.out.println(std);
       
 
 // spring is by deafult follows singleton design pattern . 
