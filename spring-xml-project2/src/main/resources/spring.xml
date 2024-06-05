@@ -5,17 +5,15 @@
                            http://www.springframework.org/schema/beans/spring-beans.xsd">
                            
      <bean id="aadhar" class="com.rohan.pojo.Aadhar">
-     <property name="aadharId" value="1215"></property>
-     <property name="aadharHolderName" value="rohan"></property>
-     <property name="age" value="20"></property>
-     <property name="income" value="20000.0"></property>
-     <property name="mobileNo" value="86897689"></property>
+     <property name="aadharId" value="1216"></property>
+     <property name="aadharHolderName" value="thanvi"></property>
+     <property name="age" value="24"></property>
+     <property name="income" value="22000.0"></property>
+     <property name="mobileNo" value="980897689"></property>
      </bean>
-     <bean id="aadharservice" class="com.rohan.service.AadharService">
-     <property name="aadhardao" ref="aadhardao"></property>
+     <bean id="aadharservice" class="com.rohan.service.AadharService" autowire="byName">
      </bean>
-     <bean id="aadhardao" class="com.rohan.dao.AadharDao">
-     <property name="util" ref="util"></property>
+     <bean id="aadhardao" class="com.rohan.dao.AadharDao" autowire="byName">
      </bean>
      <bean id="util" class="com.rohan.util.ConnectionUtil">                      
      <property name="driver"

@@ -19,7 +19,7 @@ public class AadharController {
 	BeanFactory beanfactory=new XmlBeanFactory(resource);
 	Aadhar aadhar = (Aadhar) beanfactory.getBean("aadhar");
 	AadharService aadharservice = (AadharService) beanfactory.getBean("aadharservice");
-//	aadharservice.saveAadharService(aadhar);
+	aadharservice.saveAadharService(aadhar);
 	
 //	Aadhar aadharId =aadharservice.selectByAadharIdService(1214);
 //	System.out.println(aadharId);
@@ -41,10 +41,11 @@ public class AadharController {
 	
 //	aadharservice.deleteAadhar(1234);
 	
-	Aadhar updatedaadhar = aadharservice.selectByAadharIdService(1214);
-	updatedaadhar.setAadharHolderName("vishnu");
-	updatedaadhar.setAge(21);
-	Aadhar aadhar1 = aadharservice.updateAadhar(updatedaadhar);
-	System.out.println(aadhar1);
-	}
+//	Aadhar updatedaadhar = aadharservice.selectByAadharIdService(1214);
+//	updatedaadhar.setAadharHolderName("vishnu");
+//	updatedaadhar.setAge(21);
+//	Aadhar aadhar1 = aadharservice.updateAadhar(updatedaadhar);
+//	System.out.println(aadhar1);
+//	}
+}
 }
