@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd">
+                           
+     <bean id="aadhar" class="com.rohan.pojo.Aadhar">
+     <property name="aadharId" value="1215"></property>
+     <property name="aadharHolderName" value="rohan"></property>
+     <property name="age" value="20"></property>
+     <property name="income" value="20000.0"></property>
+     <property name="mobileNo" value="86897689"></property>
+     </bean>
+     <bean id="aadharservice" class="com.rohan.service.AadharService">
+     <property name="aadhardao" ref="aadhardao"></property>
+     </bean>
+     <bean id="aadhardao" class="com.rohan.dao.AadharDao">
+     <property name="util" ref="util"></property>
+     </bean>
+     <bean id="util" class="com.rohan.util.ConnectionUtil">                      
+     <property name="driver"
+			value="com.mysql.cj.jdbc.Driver"></property>
+		<property name="url"
+			value="jdbc:mysql://localhost:3306/sys"></property>
+		<property name="userName" value="root"></property>
+		<property name="password" value="rohan"></property>
+	</bean>                     
+ </beans>
