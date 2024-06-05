@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+	<bean id="address" class="com.dhathika.pojo.Address">
+		<property name="dno" value="34" />
+		<property name="street" value="Kalyan Street" />
+		<property name="city" value="Banglore"></property>
+		<property name="state" value="Karnataka"></property>
+		<property name="pin" value="517408"></property>
+
+	</bean>
+	<bean id="student" class="com.dhathika.pojo.Student">
+		<property name="sid" value="1010" />
+		<property name="name" value="ASHOK" />
+
+		<property name="address" ref="address" />
+
+		<property name="mobileContacts">
+			<list>
+				<value>9603327460</value>
+				<value>4561673545</value>
+
+			</list>
+		</property>
+
+		<property name="subjects">
+			<set>
+				<value>Mathematics</value>
+				<value>Computers</value>
+				<value>Electronics</value>
+
+			</set>
+		</property>
+
+		<property name="marks">
+			<map>
+				<entry key="Drawing" value="60" />
+				<entry key="Science" value="15" />
+				<entry key="English" value="79" />
+			</map>
+		</property>
+	</bean>
+</beans>
