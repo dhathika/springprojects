@@ -1,5 +1,8 @@
 package com.rohan.beans;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Landmark {
 	
 	private String landmarkname;
