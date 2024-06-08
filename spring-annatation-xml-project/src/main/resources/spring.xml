@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+	<bean id="customer" class="com.dhathika.beans.Customer"
+		autowire="byName">
+		<property name="customerId" value="121212" />
+		<property name="customerName" value="Sohel" />
+		<property name="customerContact" value="8970373795" />
+	</bean>
+	<bean id="customerAddress" class="com.dhathika.beans.Address"
+		autowire="byName">
+		<property name="doorNo" value="324" />
+		<property name="streetName" value="bhagathstreet" />
+		<property name="city" value="Hyderabad" />
+		<property name="state" value="Telangana" />
+		<property name="pin" value="515571" />
+	</bean>
+	<bean id="landmark" class="com.dhathika.beans.Landmark"
+		autowire="byName">
+		<property name="landmarkname" value="near water tank" />
+		<property name="landmarkdistance" value="100" />
+	</bean>
+</beans>
