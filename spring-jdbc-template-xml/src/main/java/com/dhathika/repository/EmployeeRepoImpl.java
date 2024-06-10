@@ -35,7 +35,7 @@ String insertQuery = "insert into employee values (" + employee.getEmpId() + ",'
 
 	public void deleteEmployeeByIdRepo(int empId) {
 		String deleteQuery = "delete from employee where empid = " + empId;
-		jdbcTemplate.update(deleteQuery);
+		jdbcTemplate.execute(deleteQuery);
 	}
 
 	public List<Employee> selectAllEmployeesRepo() {
