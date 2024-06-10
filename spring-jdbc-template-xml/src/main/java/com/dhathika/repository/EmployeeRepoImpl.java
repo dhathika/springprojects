@@ -21,7 +21,7 @@ public class EmployeeRepoImpl implements EmployeeRepository{
 	}
 
 	public void saveEmployeeRepo(Employee employee) {
-String insertQuery = "insert into employee values (" + employee.getEmpId() + ",'" + employee.getEmpName()
+String insertQuery = "insert into employee1 values (" + employee.getEmpId() + ",'" + employee.getEmpName()
  + "','" + employee.getGender() + "'," + "'" + employee.isMarried() + "'," + employee.getEmpSalary() + "," + employee.getEmpContact() + ")";
 		 jdbcTemplate.update(insertQuery);
 		
