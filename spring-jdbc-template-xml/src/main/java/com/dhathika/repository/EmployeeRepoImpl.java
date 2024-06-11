@@ -21,33 +21,33 @@ public class EmployeeRepoImpl implements EmployeeRepository{
 	}
 
 	public void saveEmployeeRepo(Employee employee) {
-String insertQuery = "insert into employee values (" + employee.getEmpId() + ",'" + employee.getEmpName()
+String insertQuery = "insert into employee21 values (" + employee.getEmpId() + ",'" + employee.getEmpName()
  + "','" + employee.getGender() + "'," + "'" + employee.isMarried() + "'," + employee.getEmpSalary() + "," + employee.getEmpContact() + ")";
 		 jdbcTemplate.update(insertQuery);
 		
 	}
 
 	public Employee selectEmployeeByIdRepo(int empId) {
-		String selectByIdQuery = "select * from Employee where empid=" + empId;
+		String selectByIdQuery = "select * from Employee21 where empid=" + empId;
 		List employeeList = jdbcTemplate.query(selectByIdQuery, new EmployeeMapper());
 	
 		return  (Employee) employeeList.get(0);
 	}
 
 	public void deleteEmployeeByIdRepo(int empId) {
-		String deleteQuery = "delete from employee where empid=" + empId;
+		String deleteQuery = "delete from employee21 where empid=" + empId;
 		jdbcTemplate.execute(deleteQuery);
 		
 	}
 
 	public List<Employee> selectAllEmployeesRepo() {
-	    String selectAllQuery = "select * from Employee";
+	    String selectAllQuery = "select * from Employee21";
 	   List<Employee> empList = jdbcTemplate.query(selectAllQuery, new EmployeeMapper());
 		return empList;
 	}
 
 	public void updateEmployeeRepo(Employee employee) {
-		String updateQuery = "update employee set empName = '" + employee.getEmpName() + "',"  +
+		String updateQuery = "update employee21 set empName = '" + employee.getEmpName() + "',"  +
 	                                              "gender ='" + employee.getGender() + "'," +
 				                                  "isMarried = '" + employee.isMarried() +"'," +
 	                                              "empsalary =" + employee.getEmpSalary() + "," +
