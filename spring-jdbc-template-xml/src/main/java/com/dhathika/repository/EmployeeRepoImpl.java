@@ -28,22 +28,31 @@ String insertQuery = "insert into employee values (" + employee.getEmpId() + ",'
 	}
 
 	public Employee selectEmployeeByIdRepo(int empId) {
-		// TODO Auto-generated method stub
-		return null;
+		String selectByIdQuery = "select * from Employee where empid=" + empId;
+		List employeeList = jdbcTemplate.query(selectByIdQuery, new EmployeeMapper());
+	
+		return  (Employee) employeeList.get(0);
 	}
 
 	public void deleteEmployeeByIdRepo(int empId) {
-		// TODO Auto-generated method stub
+		String deleteQuery = "delete from employee where empid=" + empId;
+		jdbcTemplate.execute(deleteQuery);
 		
 	}
 
 	public List<Employee> selectAllEmployeesRepo() {
-		// TODO Auto-generated method stub
-		return null;
+	    String selectAllQuery = "select * from Employee";
+	   List<Employee> empList = jdbcTemplate.query(selectAllQuery, new EmployeeMapper());
+		return empList;
 	}
 
 	public void updateEmployeeRepo(Employee employee) {
-		// TODO Auto-generated method stub
+		String updateQuery = "update employee set empName = '" + employee.getEmpName() + "',"  +
+	                                              "gender ='" + employee.getGender() + "'," +
+				                                  "isMarried = '" + employee.isMarried() +"'," +
+	                                              "empsalary =" + employee.getEmpSalary() + "," +
+				                                  "empcontact =" + employee.getEmpContact() + " where empid = " + employee.getEmpId();
+		jdbcTemplate.update(updateQuery);
 		
 	}
 
