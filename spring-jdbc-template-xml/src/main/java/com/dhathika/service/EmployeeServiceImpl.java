@@ -60,8 +60,8 @@ public class EmployeeServiceImpl implements EmployeeService {
 	}
 
 	public Employee selectEmployeeByIdService(int empId) {
-		Employee employee= employeeRepository.selectEmployeeByIdRepo(empId);
-		return employee;
+	  Employee selectedEmployee = employeeRepository.selectEmployeeByIdRepo(empId);
+		return selectedEmployee;
 	}
 
 	public void deleteEmployeeByIdService(int empId) {
@@ -70,12 +70,14 @@ public class EmployeeServiceImpl implements EmployeeService {
 	}
 
 	public List<Employee> selectAllEmployeesService() {
-		// TODO Auto-generated method stub
-		return null;
+	List<Employee> empList = employeeRepository.selectAllEmployeesRepo();
+		return empList;
 	}
 
 	public void updateEmployeeService(Employee employee) {
-		// TODO Auto-generated method stub
+		deductEmployeeTax(employee);
+		setTitlesToEmplyee(employee);
+		employeeRepository.updateEmployeeRepo(employee);
 
 	}
 
