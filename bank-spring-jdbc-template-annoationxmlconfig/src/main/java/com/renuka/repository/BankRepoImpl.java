@@ -53,13 +53,16 @@ public class BankRepoImpl implements BankRepo {
 
 	@Override
 	public Bank selectBankByIdRepo(int bankId) {
-		// TODO Auto-generated method stub
-		return null;
+		String selectByIdQuery = "select * from bank where bankid=" + bankId;
+		List bankList = jdbcTemplate.query(selectByIdQuery, new BankMapper());
+	
+		return  (Bank) bankList.get(0);
 	}
 
 	@Override
 	public void deleteBankByIdRepo(int bankId) {
-		// TODO Auto-generated method stub
+		String deleteQuery = "delete from bank where bankid=" + bankId;
+		jdbcTemplate.execute(deleteQuery);
 		
 	}
 
@@ -69,10 +72,30 @@ public class BankRepoImpl implements BankRepo {
 		   List<Bank> bankList = jdbcTemplate.query(selectAllQuery, new BankMapper());
 			return bankList;
 	}
+	
+	//private int bankId;
+//	private String bankName;
+//	private String branchName;
+//	private String ifscCode;
+//	private String Address;
+//	private long accoNumber;
+//	private String accoHolderName;
+//	private String accoType;
+//	private double accobalance;
+//	
 
 	@Override
 	public void updateBankRepo(Bank bank) {
-		// TODO Auto-generated method stub
+		String updateQuery = "update bank set bankName = '" + bank.getBankName() + "',"  +
+                "branchName ='" + bank.getBranchName()+ "'," +
+                "ifscCode = '" + bank.getIfscCode() +"'," +
+                "Address = '" + bank.getAddress() +"'," +
+                "accoNumber =" + bank.getAccoNumber() + "," +
+                "accoHolderName = '" + bank.getAccoHolderName()+"'," +
+                "accoType = '" + bank.getAccoType()+"'," +
+                
+                "accobalance =" + bank.getAccobalance() + " where bankId = " + bank.getBankId();
+jdbcTemplate.update(updateQuery);
 		
 	}
 

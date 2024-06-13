@@ -28,13 +28,13 @@ public class BankServiceImpl implements BankService{
 
 	@Override
 	public Bank selectBankByIdService(int bankId) {
-		// TODO Auto-generated method stub
-		return null;
+		Bank selectedBank = bankRepo.selectBankByIdRepo(bankId);
+		return selectedBank;
 	}
 
 	@Override
 	public void deleteBankByIdService(int bankId) {
-		// TODO Auto-generated method stub
+		bankRepo.deleteBankByIdRepo(bankId);
 		
 	}
 
@@ -46,7 +46,7 @@ public class BankServiceImpl implements BankService{
 
 	@Override
 	public void updateBankService(Bank bank) {
-		// TODO Auto-generated method stub
+		bankRepo.updateBankRepo(bank);
 		
 	}
 
