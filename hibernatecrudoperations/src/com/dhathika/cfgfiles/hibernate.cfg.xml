@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+          "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+          "http://www.hibernate.org/dtd/hibernate-configuration">
+          
+<hibernate-configuration>
+
+	<session-factory>
+
+		<property name="dialect">
+			org.hibernate.dialect.Oracle10gDialect
+	</property>
+		<property name="connection.url">
+			jdbc:oracle:thin:@localhost:1521:XE
+	</property>
+		<property name="connection.username">system</property>
+		<property name="connection.password">system</property>
+		<property name="connection.driver_class">
+			oracle.jdbc.driver.OracleDriver
+	</property>
+		<property name="connection.pool_size">15</property>
+		<property name="show_sql">true</property>
+		<property name="hbm2ddl.auto">update</property>
+		<property name="use_sql_comments">true</property>
+		<property name="format_sql">true</property>
+		<mapping class="com.dhathika.dto.Order"/>
+		
+	</session-factory>
+
+</hibernate-configuration>
+
+
+</hibernate-configuration>
