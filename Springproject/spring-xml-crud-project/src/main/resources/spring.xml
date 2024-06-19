@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="order" class="com.dhathika.dto.Order">
+		<property name="orderId" value="1012"></property>
+		<property name="orderName" value="cloths"></property>
+		<property name="orderPrice" value="900.50"></property>
+	</bean>
+	<bean id="orderService" class="com.dhathika.service.OrderService">
+		<property name="orderDao" ref="orderDao"></property>
+	</bean>
+	<bean id="orderDao" class="com.dhathika.dao.OrderDao">
+		<property name="util" ref="util"></property>
+	</bean>
+	<bean id="util" class="com.dhathika.util.ConnectionUtil">
+		<property name="driver"
+			value="com.mysql.cj.jdbc.Driver"></property>
+		<property name="url"
+			value="jdbc:mysql://localhost:3306/sys"></property>
+		<property name="userName" value="root"></property>
+		<property name="password" value="Bittu@143"></property>
+	</bean>
+</beans>
